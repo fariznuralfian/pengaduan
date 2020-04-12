@@ -39,9 +39,7 @@
                 <div class="desc">
                     Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini kamu bisa, melaporkan keluh kesah anda
                 </div>
-           <!--  </div>
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-              </div> -->
+
               <form class="user">
                 
                 <div class="form-group">

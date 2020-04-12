@@ -18,6 +18,7 @@ class CreatePengaduansTable extends Migration
             $table->date('tgl_pengaduan');
             $table->unsignedInteger('id_masyarakat');
             $table->foreign('id_masyarakat')->on('masyarakat')->references('id_masyarakat')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('judul', 32);
             $table->text('isi_laporan');
             $table->string('foto');
             $table->enum('status',['0', 'proses','selesai']);

@@ -30,9 +30,11 @@ class AuthController extends Controller
     			];
     		// login
     		if (Auth::attempt($data_login)){
+                // dd(true);
     			return redirect()->route('init');
     		}else{
-    			return redirect()->back();
+                // dd(false);
+    			return redirect()->back()->with('msgWarning', 'Username dan Password Salah');
     		}
     }
     public function postRegister(Request $request)
@@ -62,7 +64,7 @@ class AuthController extends Controller
 
         Auth::loginUsingId($user->id);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('init');
     }
 
     public function logout(Request $request)

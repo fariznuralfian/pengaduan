@@ -37,21 +37,25 @@
                 <form action="" method="">
                 <h5 class="h5 text-gray-900 mb-4">APLIKASI PELAYANAN PENGANDUAN MASYARAKAT</h5>
                 <div class="desc">
-                    Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini kamu bisa, melaporkan keluh kesah anda
+                    Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini anda bisa, melaporkan keluh kesah anda
                 </div>
+                <br>
            <!--  </div>
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div> -->
               <form class="user">
                 
                 <div class="form-group">
-                  <input type="judul" class="form-control form-control-user" id="judul" name="judul" placeholder="Judul" required>
+                  <input type="text" class="form-control form-control-user" id="judul" name="judul" placeholder="Judul" required>
                 </div>
                 <div class="form-group">
                   <textarea type="keluhan" class="form-control form-control-user" placeholder="Keluhan"></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="file" class="form-control form-control-user" id="foto" name="foto" required="">
+                  <input type="file" class="form-control form-control-user" id="foto" name="foto" required="" onchange="previewFile()">
+                </div>
+                <div>
+                  <img src="" alt="Image preview.." height="200" id="img">
                 </div>
                 <a href="#" class="btn btn-user btn-block" style="background-color:#0091EA; color: white">
                   Lapor !
@@ -59,9 +63,9 @@
                 <hr>
               </form>
               <hr>
-              <div class="text-center">
+              {{-- <div class="text-center">
                 <a class="small" href="login.html">Already have an account? Login!</a>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

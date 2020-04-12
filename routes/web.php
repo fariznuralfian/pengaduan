@@ -31,20 +31,18 @@ Route::get('/init', 'HandlerController@init')
 		->name('init')
 		->middleware('auth');
 
-Route::get('/dashboard', 'HandlerController@dashboard')
-		->name('dashboard');
-
 Route::middleware('auth')->group(function (){
+Route::get('/dashboard', 'HandlerController@dashboard')->name('dashboard');
 
-});
-
+		//laporan
 Route::resource('laporan', 'LaporanController');
+Route::get('/user-laporan','LaporanController@userLaporan')->name('laporan.user');
+});
 
 Route::post('/logout','AuthController@logout')
 		->name('logout')
 		->middleware('auth');
-
-
+Route::get('/logout/get', 'AuthController@logout')->name('logout.get');
 
 Route::get('/user', function () {
     return view('pages.laporan.user-laporan');

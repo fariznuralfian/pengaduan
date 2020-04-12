@@ -32,7 +32,7 @@ class HandlerController extends Controller
     				return redirect()->route('getLogin')->with('msgWarning','Terjadi Kesalahan dengan Hak Akses');
     			}
     		}else{
-    			return redirect()->route('laporan.index');
+    			return redirect()->route('landing');
     		}
     	}
    }

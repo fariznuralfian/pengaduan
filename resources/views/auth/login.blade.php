@@ -27,7 +27,7 @@
                 <!-- <form action="" method="" > -->
                 <h5>APLIKASI PELAYANAN PENGANDUAN MASYARAKAT</h5>
                 <div class="desc">
-                    Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini kamu bisa, <p>melaporkan keluh kesah anda</p>
+                    Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini anda bisa, <p>melaporkan keluh kesah anda</p>
                     Silahkan Login, Belum punya akun? silahkan 
                     <a href="{{ url('/register') }}" >
                         Register
@@ -42,14 +42,6 @@
                         @method('POST')
                         @include('alert')
 
-                        <!--  <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" name="password" id="pass" placeholder="Password" required>
-                        </div> -->
                     <span class="txt1 p-b-11">
                         Username
                     </span>
@@ -61,7 +53,7 @@
                         Password
                     </span>
                     <div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required" required>
-                        <input class="input100" type="password" name="password" id="password" >
+                        <input class="input100" type="password" name="password" id="pass" >
                         <span class="focus-input100"></span>
                     </div>
                         <button style="margin-left: 270px" type="submit" class="btn btn-primary">Masuk</button>

@@ -13,6 +13,11 @@ class LaporanController extends Controller
      */
     public function index()
     {
+        
+    }
+
+    public function userLaporan()
+    {
         return view('pages.laporan.user-laporan');
     }
 

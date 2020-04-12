@@ -47,8 +47,38 @@
                                             <li><a class="nav-link js-scroll-trigger" href="#home">Home</a></li>
                                             <li><a class="nav-link js-scroll-trigger" href="#tentang">Tentang</a></li>
                                             <li><a class="nav-link js-scroll-trigger" href="#prosedur">Prosedur</a></li>
+                                           {{--  @guest
+                                            <li><a class="boxed-btn3  nav-link js-scroll-trigger" href="{{ route('getRegister') }}">Daftar</a></li>
+                                            <li><a class="boxed-btn3 nav-link js-scroll-trigger" href="{{ route('getLogin') }}">Masuk</a></li>
+                                            @endguest
+                                            @auth
+                                            <li>
+                                                <a class="nav-link js-scroll-trigger" href="#prosedur">
+                                                {{ Auth::user()->username }}
+                                                </a>
+                                            </li>
+                                            @endauth --}}
                                         </ul>
                                     </nav>
+                                </div>
+                            </div>
+                              <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    @guest
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a  href="{{ route('getRegister') }}">Daftar</a>
+                                    </div>
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a  href="{{ route('getLogin') }}">Masuk</a>
+                                    </div>
+                                    @endguest
+                                    @auth
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a class="nav-link js-scroll-trigger" href="">
+                                        {{ Auth::user()->username }}
+                                        </a>
+                                    </div>
+                                    @endauth
                                 </div>
                             </div>
                             <div class="col-12">
@@ -74,7 +104,7 @@
                                         Pengaduan <br>
                                     Masyarakat</h3>
                                 <div class="video_service_btn">
-                                    <a href="#" class="boxed-btn3">Lapor</a>
+                                    <a href="{{ route('laporan.user') }}" class="boxed-btn3">Lapor</a>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +119,7 @@
     <br>
     <br>
     <br>
-    
+   
     <div class="about_info_area" id="tentang">
         <div class="container">
             <div class="row align-items-center">
@@ -177,179 +207,13 @@
     </div>
     <!-- service_area_end -->
 
-{{--     <div class="testimonial_area overlay " id="prosedur">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="testmonial_active owl-carousel">
-                        <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                        <div class="quote">
-                                            <img src="img/svg_icon/quote.svg" alt="">
-                                        </div>
-                                        <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
-                                                sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
-                                                Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                        <div class="testmonial_author">
-                                            <div class="thumb">
-                                                    <img src="img/case/testmonial.png" alt="">
-                                            </div>
-                                            <h3>Robert Thomson</h3>
-                                            <span>Business Owner</span>
-                                        </div>
-                                    </div>
-                        </div>
-                        <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                        <div class="quote">
-                                            <img src="img/svg_icon/quote.svg" alt="">
-                                        </div>
-                                        <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
-                                                sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
-                                                Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                        <div class="testmonial_author">
-                                            <div class="thumb">
-                                                    <img src="img/case/testmonial.png" alt="">
-                                            </div>
-                                            <h3>Robert Thomson</h3>
-                                            <span>Business Owner</span>
-                                        </div>
-                                    </div>
-                        </div>
-                        <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                        <div class="quote">
-                                            <img src="img/svg_icon/quote.svg" alt="">
-                                        </div>
-                                        <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
-                                                sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
-                                                Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                        <div class="testmonial_author">
-                                            <div class="thumb">
-                                                    <img src="img/case/testmonial.png" alt="">
-                                            </div>
-                                            <h3>Robert Thomson</h3>
-                                            <span>Business Owner</span>
-                                        </div>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
-
- {{--    <!-- team_area  -->
-    <div class="team_area">
-            <div class="container">
-                <div class="border_bottom">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="section_title mb-40 text-center">
-                                <h3>
-                                        Expert Team
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single_team">
-                                <div class="team_thumb">
-                                    <img src="img/team/3.png" alt="">
-                                </div>
-                                <div class="team_info text-center">
-                                    <h3>Milani Mou</h3>
-                                    <p>Photographer</p>
-                                    <div class="social_link">
-                                        <ul>
-                                            <li><a href="#">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single_team">
-                                <div class="team_thumb">
-                                    <img src="img/team/2.png" alt="">
-                                </div>
-                                <div class="team_info text-center">
-                                    <h3>Jasmine Pinky</h3>
-                                    <p>Photographer</p>
-                                    <div class="social_link">
-                                        <ul>
-                                            <li><a href="#">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single_team">
-                                <div class="team_thumb">
-                                    <img src="img/team/1.png" alt="">
-                                </div>
-                                <div class="team_info text-center">
-                                    <h3>Piya Zosoldos</h3>
-                                    <p>Photographer</p>
-                                    <div class="social_link">
-                                        <ul>
-                                            <li><a href="#">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
 
     <!-- Information_area  -->
     <div class="Information_area overlay">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-xl-8">
-                    <div class="info_text text-center">
-                        <h3>For Any Information Call Us</h3>
-                        <p>Esteem spirit temper too say adieus who direct esteem.</p>
-                        <a class="boxed-btn3" href="#">+10 673 763 6786</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -371,7 +235,6 @@
                             <p>
                                     <a href="#">conbusi@support.com</a> <br>
                                     +10 873 672 6782 <br>
-                                    600/D, Green road, NewYork
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -404,8 +267,6 @@
                                 <li><a href="#">Marketing & SEO</a></li>
                                 <li><a href="#"> Startup</a></li>
                                 <li><a href="#">Finance solution</a></li>
-                                <li><a href="#">Food</a></li>
-                                <li><a href="#">Travel</a></li>
                             </ul>
 
                         </div>
@@ -418,22 +279,8 @@
                             <ul>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Blog</a></li>
-                                <li><a href="#"> Contact</a></li>
-                                <li><a href="#">Appointment</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget">
-                                    <h3 class="footer_title">
-                                            Subscribe
-                                    </h3>
-                                    <form action="#" class="newsletter_form">
-                                        <input type="text" placeholder="Enter your mail">
-                                        <button type="submit">Subscribe</button>
-                                    </form>
-                                    <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems luckily.</p>
-                                </div>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@
                 <h1>Pengaduan<span style="color: #0091EA">Masyarakat</span></h1>
                 <h5>APLIKASI PELAYANAN PENGANDUAN MASYARAKAT</h5>
                 <div class="desc">
-                    Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini kamu bisa, <p>melaporkan keluh kesah anda</p>
+                    Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini anda bisa, <p>melaporkan keluh kesah anda</p>
                     Silahkan Register, belum punya akun? silahkan 
                     <a href="{{ route('getLogin') }}" >
                         Login
@@ -36,33 +36,9 @@
                     <form action="{{route('postRegister')}}" method="post">
                         @csrf
                         @include('alert')
-                        <!-- <div class="form-group">
-                            <label for="nik">NIK:</label>
-                                <input id="nik" type="nik" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{ old('nik') }}" autocomplete="nik"  placeholder="NIK" autofocus>
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <label for="nama">Nama:</label>
-                            <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" autocomplete="nama"  placeholder="Nama" autofocus>
-                        </div> -->
-                         <!-- <div class="form-group">
-                            <label for="telp">No.Telp:</label>
-                            <input id="telp" type="telp" class="form-control @error('telp') is-invalid @enderror" name="telp" value="{{ old('telp') }}" autocomplete="telp"  placeholder="No.Telp" autofocus>
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" autocomplete="username"  placeholder="Username" autofocus>
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="password"  placeholder="Password" autofocus>
-                        </div> -->
-                        <!-- <div class="form-label-group">
-                            <label for="=password">Konfirmasi Password</label>
-                            <input type="password" id="password" name="password_confirmation" class="form-control " placeholder="Konfirmasi Password">
-                        </div> -->
-
+                       
                         <span class="txt1 p-b-11">
-                        NIK
+                        Nomor Induk Kependudukan
                         </span>
                             <div class="wrap-input100 validate-input m-b-36 ">
                             <input class="input100 @error('nik') is-invalid @enderror" type="nik" name="nik"  id="nik"  value="{{ old('nik') }}" autocomplete="nik"  autofocus>

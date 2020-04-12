@@ -20,9 +20,6 @@
               <i class="fas fa-sign-out  mr-2"></i>Logout
             </button>
           </form>
-          <!-- <a href="#" class="dropdown-item">
-            <i class="fa fa-sign-out  mr-2"></i> Logout
-          </a> -->
         </div>
       </li>
       <li class="nav-item">
