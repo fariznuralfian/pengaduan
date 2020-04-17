@@ -22,7 +22,7 @@
 </head>
 
 <body style="background-color:#0091EA;">
-
+     
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -34,44 +34,47 @@
             <div class="p-5">
               <div class="text-center">
                 <h4 class="h4 text-gray-900 mb-4">Pengaduan<span style="color: #0091EA">Masyarakat</span></h1>
-                <form action="" method="">
                 <h5 class="h5 text-gray-900 mb-4">APLIKASI PELAYANAN PENGANDUAN MASYARAKAT</h5>
                 <div class="desc">
                     Selamat Datang di PENGADUAN ONLINE MASYARAKAT disini anda bisa, melaporkan keluh kesah anda
                 </div>
                 <br>
-           <!--  </div>
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-              </div> -->
-              <form class="user">
-                
+              <form action="{{ route('laporan.store')}}" method="POST">
+
+                @csrf
+
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="judul" name="judul" placeholder="Judul" required>
+                  <input type="text" class="form-control form-control-user {{$errors->has('judul') ? 'is-invalid' : ''}}" id="judul" name="judul" placeholder="Judul" value="{{old('judul')}}" required>
                 </div>
                 <div class="form-group">
-                  <textarea type="keluhan" class="form-control form-control-user" placeholder="Keluhan"></textarea>
+                  <select name="kategori_laporan" id="kategori_laporan" class="form-control form-control-user">
+                      <option value="kriminal">Kriminal </option>
+                      <option value="teknologi">Teknologi</option>
+                      <option value="lingkungan">Lingkungan</option>
+                      <option value="sosial">Sosial</option>
+                      <option value="politik">Politik</option>
+                      <option value="ekonomi">Ekonomi</option>
+                  </select>
                 </div>
                 <div class="form-group">
-                  <input type="file" class="form-control form-control-user" id="foto" name="foto" required="" onchange="previewFile()">
+                  <textarea type="text" name="isi_laporan" class="form-control form-control-user" id="materialContactFormMessage" placeholder="Keluhan" value="{{old('isi_laporan')}}"></textarea>
                 </div>
-                <div>
+                <div class="form-group">
+                  <input type="file" class="form-control form-control-user" id="foto" name="foto" required="" accept=".jpg, .jpeg, .png  " onchange="previewFile()" value="{{old('foto')}}">
+                </div>
+                <div class="form-group">
                   <img src="" alt="Image preview.." height="200" id="img">
                 </div>
-                <a href="#" class="btn btn-user btn-block" style="background-color:#0091EA; color: white">
-                  Lapor !
-                </a>
+                <input class="btn btn-user btn-block" type="submit" style="background-color:#0091EA; color: white" value="Lapor">
+                </input>
                 <hr>
               </form>
               <hr>
-              {{-- <div class="text-center">
-                <a class="small" href="login.html">Already have an account? Login!</a>
-              </div> --}}
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Bootstrap core JavaScript-->

@@ -39,6 +39,7 @@ Route::resource('laporan', 'LaporanController');
 Route::get('/user-laporan','LaporanController@userLaporan')->name('laporan.user');
 });
 
+
 Route::post('/logout','AuthController@logout')
 		->name('logout')
 		->middleware('auth');
@@ -46,7 +47,10 @@ Route::get('/logout/get', 'AuthController@logout')->name('logout.get');
 
 Route::get('/user', function () {
     return view('pages.laporan.user-laporan');
+
 });
 // Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
